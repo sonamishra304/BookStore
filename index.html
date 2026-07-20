@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookStore Management System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+
+    <nav>
+        <h2>📚 BookStore</h2>
+
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Books</a></li>
+            <li><a href="#">🛒 Cart (<span id="cartCount">0</span>)</a></li>
+            <li><a href="#">Login</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+
+    <section class="hero">
+
+        <h1>Welcome to BookStore</h1>
+
+        <p>
+            Buy your favourite books online at the best prices.
+        </p>
+
+        <button>Explore Books</button>
+
+    </section>
+
+    <!-- Featured Books -->
+
+   <section class="books">
+
+    <h2>Our Book Collection</h2>
+
+    <input
+        type="text"
+        id="searchBox"
+        placeholder="🔍 Search Books..."
+        onkeyup="searchBooks()"
+    >
+
+    <div class="book-container" id="bookContainer">
+
+        <!-- Book 1 -->
+        <div class="book-card">
+            <img src="https://picsum.photos/250/350?1" alt="Atomic Habits">
+            <h3>Atomic Habits</h3>
+            <p>₹499</p>
+
+            <div class="rating">⭐⭐⭐⭐⭐</div>
+
+            <div class="buttons">
+                <button onclick="addToCart()">🛒 Add to Cart</button>
+                <button onclick="viewBook('Atomic Habits','James Clear','₹499')">👁 View</button>
+                <button onclick="wishlist()">❤️</button>
+            </div>
+        </div>
+
+        <!-- Book 2 -->
+        <div class="book-card">
+            <img src="https://picsum.photos/250/350?2" alt="Deep Work">
+            <h3>Deep Work</h3>
+            <p>₹599</p>
+
+            <div class="rating">⭐⭐⭐⭐☆</div>
+
+            <div class="buttons">
+                <button onclick="addToCart()">🛒 Add to Cart</button>
+                <button onclick="viewBook('Deep Work','Cal Newport','₹599')">👁 View</button>
+                <button onclick="wishlist()">❤️</button>
+            </div>
+        </div>
+
+        <!-- Book 3 -->
+        <div class="book-card">
+            <img src="https://picsum.photos/250/350?3" alt="Clean Code">
+            <h3>Clean Code</h3>
+            <p>₹799</p>
+
+            <div class="rating">⭐⭐⭐⭐⭐</div>
+
+            <div class="buttons">
+                <button onclick="addToCart()">🛒 Add to Cart</button>
+                <button onclick="viewBook('Clean Code','Robert C. Martin','₹799')">👁 View</button>
+                <button onclick="wishlist()">❤️</button>
+            </div>
+        </div>
+
+        <!-- Book 4 -->
+        <div class="book-card">
+            <img src="https://picsum.photos/250/350?4" alt="The Alchemist">
+            <h3>The Alchemist</h3>
+            <p>₹399</p>
+
+            <div class="rating">⭐⭐⭐⭐☆</div>
+
+            <div class="buttons">
+                <button onclick="addToCart()">🛒 Add to Cart</button>
+                <button onclick="viewBook('The Alchemist','Paulo Coelho','₹399')">👁 View</button>
+                <button onclick="wishlist()">❤️</button>
+            </div>
+        </div>
+
+        <!-- Book 5 -->
+        <div class="book-card">
+            <img src="https://picsum.photos/250/350?5" alt="Rich Dad Poor Dad">
+            <h3>Rich Dad Poor Dad</h3>
+            <p>₹450</p>
+
+            <div class="rating">⭐⭐⭐⭐⭐</div>
+
+            <div class="buttons">
+                <button onclick="addToCart()">🛒 Add to Cart</button>
+                <button onclick="viewBook('Rich Dad Poor Dad','Robert Kiyosaki','₹450')">👁 View</button>
+                <button onclick="wishlist()">❤️</button>
+            </div>
+        </div>
+
+        <!-- Book 6 -->
+        <div class="book-card">
+            <img src="https://picsum.photos/250/350?6" alt="Think and Grow Rich">
+            <h3>Think and Grow Rich</h3>
+            <p>₹550</p>
+
+            <div class="rating">⭐⭐⭐⭐☆</div>
+
+            <div class="buttons">
+                <button onclick="addToCart()">🛒 Add to Cart</button>
+                <button onclick="viewBook('Think and Grow Rich','Napoleon Hill','₹550')">👁 View</button>
+                <button onclick="wishlist()">❤️</button>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+    <!-- Login/Register Modal -->
+
+<div id="popup" class="popup">
+
+    <div class="popup-content">
+
+        <span class="close" onclick="closePopup()">&times;</span>
+
+        <h2 id="popupTitle">Login</h2>
+
+        <input type="text" placeholder="Email">
+
+        <input type="password" placeholder="Password">
+
+        <button id="popupButton">Login</button>
+
+        <p id="switchText">
+            Don't have an account?
+            <a href="#" onclick="showRegister()">Register</a>
+        </p>
+
+    </div>
+
+</div>
+<section class="cart-section">
+
+    <h2>🛒 Shopping Cart</h2>
+
+    <div id="cartItems">
+
+        <p>No books added yet.</p>
+
+    </div>
+
+</section>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
